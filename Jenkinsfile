@@ -8,7 +8,7 @@ node {
 	}
 	
 	stage('Gradle Build') {
-		sh "./gradlew clean cleanGenerateXtext build createLocalMavenRepo -PuseJenkinsSnapshots=true -PJENKINS_URL=$JENKINS_URL -PcompileXtend=true -PignoreTestFailures=true --refresh-dependencies --continue"
+		sh "./gradlew clean cleanGenerateXtext build publish -PuseJenkinsSnapshots=true -PJENKINS_URL=$JENKINS_URL -PcompileXtend=true -PignoreTestFailures=true --refresh-dependencies --continue"
 		step([$class: 'JUnitResultArchiver', testResults: '**/build/test-results/test/*.xml'])
 	}
 	
