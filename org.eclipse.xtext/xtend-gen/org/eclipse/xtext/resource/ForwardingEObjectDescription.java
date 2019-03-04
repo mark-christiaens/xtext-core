@@ -45,8 +45,12 @@ public abstract class ForwardingEObjectDescription extends ForwardingObject impl
     this.delegate = delegate;
   }
   
-  public EClass getEClass() {
-    return this.delegate.getEClass();
+  public QualifiedName getName() {
+    return this.delegate.getName();
+  }
+  
+  public QualifiedName getQualifiedName() {
+    return this.delegate.getQualifiedName();
   }
   
   public EObject getEObjectOrProxy() {
@@ -57,16 +61,12 @@ public abstract class ForwardingEObjectDescription extends ForwardingObject impl
     return this.delegate.getEObjectURI();
   }
   
-  public QualifiedName getName() {
-    return this.delegate.getName();
+  public EClass getEClass() {
+    return this.delegate.getEClass();
   }
   
-  public QualifiedName getQualifiedName() {
-    return this.delegate.getQualifiedName();
-  }
-  
-  public String getUserData(final String key) {
-    return this.delegate.getUserData(key);
+  public String getUserData(final String arg0) {
+    return this.delegate.getUserData(arg0);
   }
   
   public String[] getUserDataKeys() {

@@ -35,6 +35,7 @@ import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Pair;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.junit.Assert;
+import org.junit.Assume;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -106,6 +107,7 @@ public class SemanticHighlightingTest extends AbstractTestLangLanguageServerTest
   
   @Test
   public void testDidOpen_multiLine() {
+    Assume.assumeFalse(System.getProperty("os.name").startsWith("Windows"));
     Path _path = this.root.toPath();
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("MyModel.");

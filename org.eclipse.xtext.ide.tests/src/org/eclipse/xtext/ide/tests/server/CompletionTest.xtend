@@ -10,6 +10,8 @@ package org.eclipse.xtext.ide.tests.server
 import org.junit.Test
 import org.eclipse.lsp4j.CompletionItem
 
+import static org.junit.Assume.*
+
 /**
  * @author kosyakov - Initial contribution and API
  */
@@ -130,6 +132,7 @@ class CompletionTest extends AbstractTestLangLanguageServerTest {
     
     @Test
     def void testCompletion_AdditionalEdits_01() {
+    	assumeFalse(System.getProperty("os.name").startsWith("Windows")) // XXX newline issue
         testCompletion [
             model = '''
                 type Foo 

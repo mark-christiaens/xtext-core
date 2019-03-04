@@ -154,59 +154,59 @@ public class CommandRegistryTest implements IResourceServiceProvider, IExecutabl
     return CompletableFuture.<Void>completedFuture(null);
   }
   
-  public boolean canHandle(final URI uri) {
-    return this.noImpl.canHandle(uri);
-  }
-  
-  public IContainer.Manager getContainerManager() {
-    return this.noImpl.getContainerManager();
-  }
-  
-  public IEncodingProvider getEncodingProvider() {
-    return this.noImpl.getEncodingProvider();
+  public IResourceValidator getResourceValidator() {
+    return this.noImpl.getResourceValidator();
   }
   
   public IResourceDescription.Manager getResourceDescriptionManager() {
     return this.noImpl.getResourceDescriptionManager();
   }
   
-  public IResourceValidator getResourceValidator() {
-    return this.noImpl.getResourceValidator();
+  public IContainer.Manager getContainerManager() {
+    return this.noImpl.getContainerManager();
   }
   
-  public CompletableFuture<ApplyWorkspaceEditResponse> applyEdit(final ApplyWorkspaceEditParams params) {
-    return this.noImpl3.applyEdit(params);
+  public boolean canHandle(final URI arg0) {
+    return this.noImpl.canHandle(arg0);
   }
   
-  public CompletableFuture<List<Object>> configuration(final ConfigurationParams configurationParams) {
-    return this.noImpl3.configuration(configurationParams);
+  public IEncodingProvider getEncodingProvider() {
+    return this.noImpl.getEncodingProvider();
   }
   
-  public void logMessage(final MessageParams message) {
-    this.noImpl3.logMessage(message);
+  public CompletableFuture<ApplyWorkspaceEditResponse> applyEdit(final ApplyWorkspaceEditParams arg0) {
+    return this.noImpl3.applyEdit(arg0);
   }
   
-  public void publishDiagnostics(final PublishDiagnosticsParams diagnostics) {
-    this.noImpl3.publishDiagnostics(diagnostics);
+  public void telemetryEvent(final Object arg0) {
+    this.noImpl3.telemetryEvent(arg0);
   }
   
-  public void semanticHighlighting(final SemanticHighlightingParams params) {
-    this.noImpl3.semanticHighlighting(params);
+  public void publishDiagnostics(final PublishDiagnosticsParams arg0) {
+    this.noImpl3.publishDiagnostics(arg0);
   }
   
-  public void showMessage(final MessageParams messageParams) {
-    this.noImpl3.showMessage(messageParams);
+  public void showMessage(final MessageParams arg0) {
+    this.noImpl3.showMessage(arg0);
   }
   
-  public CompletableFuture<MessageActionItem> showMessageRequest(final ShowMessageRequestParams requestParams) {
-    return this.noImpl3.showMessageRequest(requestParams);
+  public CompletableFuture<MessageActionItem> showMessageRequest(final ShowMessageRequestParams arg0) {
+    return this.noImpl3.showMessageRequest(arg0);
   }
   
-  public void telemetryEvent(final Object object) {
-    this.noImpl3.telemetryEvent(object);
+  public void logMessage(final MessageParams arg0) {
+    this.noImpl3.logMessage(arg0);
   }
   
   public CompletableFuture<List<WorkspaceFolder>> workspaceFolders() {
     return this.noImpl3.workspaceFolders();
+  }
+  
+  public CompletableFuture<List<Object>> configuration(final ConfigurationParams arg0) {
+    return this.noImpl3.configuration(arg0);
+  }
+  
+  public void semanticHighlighting(final SemanticHighlightingParams arg0) {
+    this.noImpl3.semanticHighlighting(arg0);
   }
 }

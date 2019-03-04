@@ -103,8 +103,16 @@ public class GeneratorNodeProcessor {
       return this.contents;
     }
     
-    public char charAt(final int index) {
-      return this.contents.charAt(index);
+    public int length() {
+      return this.contents.length();
+    }
+    
+    public char charAt(final int arg0) {
+      return this.contents.charAt(arg0);
+    }
+    
+    public CharSequence subSequence(final int arg0, final int arg1) {
+      return this.contents.subSequence(arg0, arg1);
     }
     
     public IntStream chars() {
@@ -113,14 +121,6 @@ public class GeneratorNodeProcessor {
     
     public IntStream codePoints() {
       return this.contents.codePoints();
-    }
-    
-    public int length() {
-      return this.contents.length();
-    }
-    
-    public CharSequence subSequence(final int start, final int end) {
-      return this.contents.subSequence(start, end);
     }
   }
   
@@ -254,36 +254,36 @@ public class GeneratorNodeProcessor {
         return this.delegate;
       }
       
-      public int getEndLineNumber() {
-        return this.getDelegate().getEndLineNumber();
-      }
-      
       public int getLineNumber() {
         return this.getDelegate().getLineNumber();
       }
       
-      public ITextRegionWithLineInformation merge(final ITextRegionWithLineInformation other) {
-        return this.getDelegate().merge(other);
+      public int getEndLineNumber() {
+        return this.getDelegate().getEndLineNumber();
       }
       
-      public boolean contains(final ITextRegion other) {
-        return this.getDelegate().contains(other);
-      }
-      
-      public boolean contains(final int offset) {
-        return this.getDelegate().contains(offset);
-      }
-      
-      public int getLength() {
-        return this.getDelegate().getLength();
+      public ITextRegionWithLineInformation merge(final ITextRegionWithLineInformation arg0) {
+        return this.getDelegate().merge(arg0);
       }
       
       public int getOffset() {
         return this.getDelegate().getOffset();
       }
       
-      public ITextRegion merge(final ITextRegion region) {
-        return this.getDelegate().merge(region);
+      public int getLength() {
+        return this.getDelegate().getLength();
+      }
+      
+      public ITextRegion merge(final ITextRegion arg0) {
+        return this.getDelegate().merge(arg0);
+      }
+      
+      public boolean contains(final ITextRegion arg0) {
+        return this.getDelegate().contains(arg0);
+      }
+      
+      public boolean contains(final int arg0) {
+        return this.getDelegate().contains(arg0);
       }
     }
     

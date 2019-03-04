@@ -40,6 +40,7 @@ import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.Pair;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
+import org.junit.Assume;
 import org.junit.Test;
 
 /**
@@ -217,6 +218,7 @@ public class CompletionTest extends AbstractTestLangLanguageServerTest {
   
   @Test
   public void testCompletion_AdditionalEdits_01() {
+    Assume.assumeFalse(System.getProperty("os.name").startsWith("Windows"));
     final Procedure1<TestCompletionConfiguration> _function = (TestCompletionConfiguration it) -> {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("type Foo ");

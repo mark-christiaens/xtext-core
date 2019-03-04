@@ -54,8 +54,8 @@ public class TopologicalSorter {
     List<ProjectDescription> _xblockexpression = null;
     {
       this.cyclicAcceptor = new IAcceptor<ProjectDescription>() {
-          public void accept(ProjectDescription t) {
-            cyclicAcceptor.apply(t);
+          public void accept(ProjectDescription arg0) {
+            cyclicAcceptor.apply(arg0);
           }
       };
       final Function1<ProjectDescription, TopologicalSorter.Entry> _function = (ProjectDescription it) -> {

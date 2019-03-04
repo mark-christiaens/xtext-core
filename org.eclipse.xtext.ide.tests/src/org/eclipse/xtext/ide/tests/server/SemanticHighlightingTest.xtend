@@ -20,6 +20,7 @@ import org.junit.Before
 import org.junit.Test
 
 import static org.junit.Assert.*
+import static org.junit.Assume.*
 
 class SemanticHighlightingTest extends AbstractTestLangLanguageServerTest {
 
@@ -60,6 +61,7 @@ class SemanticHighlightingTest extends AbstractTestLangLanguageServerTest {
 	
 	@Test
 	def void testDidOpen_multiLine() {
+    	assumeFalse(System.getProperty("os.name").startsWith("Windows")) // XXX newline issue
 		val file = root.toPath.resolve('''MyModel.«fileExtension»''').toFile;
 		val uri = file.toURI.toUriString;
 		uri.open('''

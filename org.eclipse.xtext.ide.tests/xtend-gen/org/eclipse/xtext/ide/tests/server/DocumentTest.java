@@ -18,6 +18,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.junit.Assert;
+import org.junit.Assume;
 import org.junit.Test;
 
 /**
@@ -184,6 +185,7 @@ public class DocumentTest {
   
   @Test
   public void testGetLineContent() {
+    Assume.assumeFalse(System.getProperty("os.name").startsWith("Windows"));
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("aaa");
     _builder.newLine();
